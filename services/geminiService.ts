@@ -3,11 +3,11 @@ import { GoogleGenAI, GenerateContentResponse, GroundingChunk } from "@google/ge
 import { RESEARCHER_SYSTEM_INSTRUCTION, PLANNER_SYSTEM_INSTRUCTION } from '../constants';
 import type { ResearchSnapshot, PostPlan } from '../types';
 
-if (!process.env.API_KEY) {
+if (!import.meta.env.VITE_GEMINI_API_KEY) {
   throw new Error("API_KEY environment variable is not set");
 }
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 
 async function generateImage(prompt: string | null): Promise<string | null> {
     if (!prompt) {
