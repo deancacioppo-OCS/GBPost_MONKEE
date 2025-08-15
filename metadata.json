@@ -1,0 +1,5 @@
+{
+  "name": "GBP Post Generation AI",
+  "description": "A two-step AI agent application to generate a client research snapshot and then create a 16-post Google Business Profile plan using the Gemini API.",
+  "requestFramePermissions": []
+}
